@@ -133,6 +133,7 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
+    Msm8917Doze \
     AdvancedDisplay \
     hwcomposer.msm8937 \
     memtrack.msm8937 \
