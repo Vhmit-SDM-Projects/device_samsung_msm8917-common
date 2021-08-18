@@ -167,6 +167,12 @@ ENABLE_VENDOR_RIL_SERVICE := true
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := config omr efs
 
+#Power
+TARGET_USES_INTERACTION_BOOST := true
+TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power/power-mode.cpp
+BOARD_POWER_CUSTOM_BOARD_LIB := libpower_8937
+
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 
