@@ -15,7 +15,8 @@
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
     
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
@@ -329,7 +330,8 @@ PRODUCT_PACKAGES += \
     init.bloatware.rc \
     init.wifi.rc \
     fstab.qcom \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.msm8917.rc
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
