@@ -1511,7 +1511,6 @@ vendor/lib/libqcbor.so
 vendor/lib/libqcrildatactl.so
 vendor/lib/libqdma.so
 vendor/lib/libqdma_file_agent.so
-vendor/lib/libqti_vndfwk_detect.so
 vendor/lib/librecordalive.so
 vendor/lib/libreffeature.so
 vendor/lib/libscalar.so
@@ -1548,7 +1547,6 @@ vendor/lib/libucsengine.so
 vendor/lib/libuniplugin.so
 vendor/lib/libvkmanager_vendor.so
 vendor/lib/libvkservice.so
-vendor/lib/libvndfwk_detect_jni.qti.so
 vendor/lib/libvndsecril-client.so
 vendor/lib/libwifi-hal-ctrl.so
 vendor/lib/libwifi-hal.so
