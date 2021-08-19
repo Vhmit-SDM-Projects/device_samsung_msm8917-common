@@ -1,4 +1,153 @@
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.cne.feature=0 \
+    ro.frp.pst=/dev/block/bootdevice/by-name/config \
+    persist.sys.strictmode.disable=true \
+    persist.vendor.qcomsysd.enabled=1 \
+    ro.arch=msm8937_32 \
+    ro.debug_level=0x494d \
+    ro.error.receiver.default=com.samsung.receiver.error \
+    ro.wsmd.enable=true \
+    sys.config.activelaunch_enable=true \
+    sys.config.phone_start_early=true \
+    ro.hardware.nfc_nci=nqx.default \
+    persist.backup.ntpServer=0.pool.ntp.org \
+    sys.vendor.shutdown.waittime=500 \
+    dev.usbsetting.embedded=on \
+    vendor.vidc.enc.narrow.searchrange=1 \
+    vendor.hw.fm.init=0 \
+    ro.control_privapp_permissions=enforce \
+    ro.config.max_snapshot_num=1 \
+    ro.config.enable_upgrade_criadj=true
+
+#power
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.power.pasr.enabled=true
+
+#Perf(ormace) d(eamon)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=libqti-perfd-client.so \
+    vendor.perf.iop_v3.enable=1 \
+    ro.vendor.qti.config.swap=0
+
+#Graphics properties
+#debug.sf.enable_hwc_vds=1
+# Property to enable display default color mode -> vendor.display.enable_default_color_mode=1
+#propery to enable VDS WFD solution -> persist.hwc.enable_vds=1
+#enable SW Navigation bar -> qemu.hw.mainkeys=0
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.egl.hw=0 \
+    debug.gralloc.enable_fb_ubwc=1 \
+    debug.sf.hw=0 \
+    debug.sf.latch_unsignaled=1 \
+    sdm.debug.disable_skip_validate=1 \
+    vendor.gralloc.enable_fb_ubwc=1 \
+    vendor.display.disable_skip_validate=1 \
+    vendor.display.enable_default_color_mode=1 \
+    persist.demo.hdmirotationlock=false \
+    debug.hwui.renderer=opengl \
+    sys.disable_ext_animation=1 \
+    qemu.hw.mainkeys=0 \
+    persist.hwc.enable_vds=1 \
+    ro.kernel.qemu.gles=2 \
+    ro.kernel.qemu=1 \
+    vendor.display.perf_hint_window=50 \
+    ro.config.avoid_gfx_accel=true \
+ 
+
+#    persist.sys.factory.bcontrol=2 \
+#    dev.pm.dyn_samplingrate=1 \
+#    debug.sf.recomputecrop=0 \
+#    ro.vendor.display.cabl=2 \
+#    ro.opengles.version=196608 \
+#   debug.cpurend.vsync=false
+#   debug.enable.sglscale=1 \
+#    debug.mdpcomp.logs=0 \
+#    debug.sdm.support_writeback=0 \
+#    persist.hwc.mdpcomp.enable=true \
+#    vendor.display.disable_rotator_split=1 \
+ 
+
+# OPEN GL ES layers
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.egl=adreno
+
+#Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.foreground-heap-growth-multiplier=2.0
+
+#TODO
+#DHA Tune vai para init lib
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.add_bonusEFK=1 \
+    ro.config.dha_cached_min=0 \
+    ro.config.dha_cached_max=2 \
+    ro.config.dha_empty_min=0 \
+    ro.config.dha_empty_max=6 \
+    ro.config.dha_empty_init=0 \
+    ro.config.dha_lmk_scale=0.990 \
+    ro.config.dha_th_rate=3 \
+    ro.cfg.dha_2ndprop_thMB=1024 \
+    ro.cfg.dha_cached_max=2 \
+    ro.cfg.dha_empty_max=2 \
+    ro.cfg.dha_empty_init=0 \
+
+# SurfaceFlinger
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.protected_contents=true \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+    
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.early_phase_offset_ns=1500000 \
+    debug.sf.early_app_phase_offset_ns=1500000 \
+    debug.sf.early_gl_phase_offset_ns=3000000 \
+    debug.sf.early_gl_app_phase_offset_ns=15000000
+
+
+#stagefright
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0
+
+# Force Trim Half Cached apps
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.force_trim=true
+
+# set threshold to filter unused apps
+PRODUCT_PROPERTY_OVERRIDES += \
+     pm.dexopt.downgrade_after_inactive_days=10
+
+# Bservice Propogation Enable
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.bservice_enable=true
+
+# Memory optimizations
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.sys.fw.bservice_enable=true \
+    ro.vendor.qti.sys.fw.bservice_limit=2 \
+    ro.vendor.qti.sys.fw.bservice_age=5000
+
+
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.qti.telephony.vt_cam_interface=1 \
+    persist.vendor.camera.gyro.android=1 \
+    persist.camera.gyro.disable=0 \
+    media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+
+#ro.config.max_snapshot_num=1 \
+#    persist.camera.gyro.android=1 \
+#    persist.camera.is_type=1 \
+#    ro.config.max_snapshot_num=1 \
+#    vidc.enc.dcvs.extra-buff-count=2 \
+#    persist.vendor.camera.is_type=1 \
+#    persist.vendor.camera.display.umax=1920x1080 \
+#    persist.vendor.camera.display.lmax=1480x720 \
+    
+
+
+#Audio
+PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
     audio.deep_buffer.media=true \
     audio.offload.min.duration.secs=30 \
@@ -9,7 +158,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
     persist.vendor.audio.speaker.prot.enable=false \
     ro.af.client_heap_size_kbyte=7168 \
-    ro.build.scafe.version=2019A \
     ro.vendor.audio.sdk.fluencetype=none \
     ro.vendor.audio.sdk.ssr=false \
     vendor.audio.dolby.ds2.enabled=false \
@@ -31,71 +179,33 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.use.sw.ape.decoder=true \
     vendor.audio_hal.period_size=192 \
     vendor.voice.conc.fallbackpath=deep-buffer \
-    vendor.voice.path.for.pcm.voip=true \
     vendor.voice.playback.conc.disabled=true \
     vendor.voice.record.conc.disabled=false \
-    vendor.voice.voip.conc.disabled=true \
-    persist.vendor.cne.feature=0 \
-    rild.libargs=-d /dev/umts_ipc0 \
-    dalvik.vm.heapgrowthlimit=128m \
-    dalvik.vm.heapmaxfree=8m \
-    dalvik.vm.heapminfree=2m \
-    dalvik.vm.heapsize=384m \
-    dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    ro.dalvik.vm.native.bridge=0 \
-    vendor.hw.fm.init=0 \
-    ro.frp.pst=/dev/block/bootdevice/by-name/config \
-    debug.egl.hw=0 \
-    debug.gralloc.enable_fb_ubwc=1 \
-    debug.sf.hw=0 \
-    debug.sf.latch_unsignaled=1 \
-    persist.demo.hdmirotationlock=false \
-    ro.sf.lcd_density=280 \
-    vendor.display.disable_skip_validate=1 \
-    vendor.display.enable_default_color_mode=1 \
     vendor.mediacodec.binder.size=4 \
-    vendor.vidc.disable.split.mode=1 \
-    keyguard.no_require_sim=true \
-    persist.hwc.enable_vds=1 \
-    persist.sys.strictmode.disable=true \
-    persist.vendor.qcomsysd.enabled=1 \
-    ro.arch=msm8937_32 \
-    ro.cfg.dha_2ndprop_thMB=2048 \
-    ro.cfg.dha_cached_max=10 \
-    ro.cfg.dha_empty_init=20 \
-    ro.cfg.dha_empty_max=20 \
-    ro.config.add_bonusEFK=2 \
-    ro.config.dha_cached_max=5 \
-    ro.config.dha_cached_min=2 \
-    ro.config.dha_empty_init=14 \
-    ro.config.dha_empty_max=14 \
-    ro.config.dha_empty_min=4 \
-    ro.config.dha_lmk_scale=0.545 \
-    ro.config.dha_pwhitelist_enable=1 \
-    ro.config.dha_pwhl_key=513 \
-    ro.config.dha_th_rate=2.5 \
-    ro.config.v_bonusEFK=20480 \
-    ro.debug_level=0x494d \
-    ro.error.receiver.default=com.samsung.receiver.error \
+    vendor.vidc.disable.split.mode=1  \
+    vendor.voice.path.for.pcm.voip=true \
+    vendor.voice.voip.conc.disabled=true
+
+
+#Security
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.gatekeeper=mdfpp \
     ro.hardware.keystore=mdfpp \
-    ro.hdcp2.rx=tz \
-    ro.kernel.qemu.gles=2 \
-    ro.multisim.simslotcount=2 \
     ro.security.keystore.keytype=sak,gak \
-    ro.security.vpnpp.release=2.0 \
+    ro.security.vpnpp.release=3.0 \
     ro.security.vpnpp.ver=2.1 \
-    ro.wsmd.enable=true \
     security.ASKS.policy_version=000000 \
     security.mdpp.mass=skmm \
-    sys.config.activelaunch_enable=true \
-    sys.config.phone_start_early=true \
-    sys.disable_ext_animation=1 \
-    ro.hardware.nfc_nci=nqx.default \
-    persist.backup.ntpServer=0.pool.ntp.org \
-    ro.vendor.extension_library=libqti-perfd-client.so \
-    vendor.perf.iop_v3.enable=true \
+    ro.build.scafe.version=2019A \
+    keyguard.no_require_sim=true \
+    ro.frp.pst=/dev/block/bootdevice/by-name/config \
+    ro.security.cass.feature=1 \
+    security.securehw.available=false \
+    security.securenvm.available=false \
+    ro.vendor.build.version.sehi=2901
+
+#RIL
+PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.atfwd.start=true \
     persist.vendor.radio.custom_ecc=1 \
@@ -108,28 +218,42 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so \
     vendor.sec.rild.libpath2=/vendor/lib/libsec-ril-dsds.so \
     vendor.sec.rild.libpath=/vendor/lib/libsec-ril.so \
-    sys.vendor.shutdown.waittime=500 \
-    sdm.debug.disable_skip_validate=1 \
-    debug.hwui.renderer=opengl \
-    ro.sf.lcd_density=260 \
-    dev.usbsetting.embedded=on \
-    rild.libargs=-d /dev/umts_ipc0 \
-    debug.egl.hw=0 \
-    debug.gralloc.enable_fb_ubwc=1 \
-    debug.sf.hw=0 \
-    debug.sf.latch_unsignaled=1 \
-    media.settings.xml=/vendor/etc/media_profiles_vendor.xml \
-    persist.camera.gyro.android=1 \
-    persist.camera.is_type=1 \
-    vendor.vidc.enc.narrow.searchrange=1 \
-    persist.vendor.qti.telephony.vt_cam_interface=1
+    ro.hdcp2.rx=tz \
+    ro.multisim.simslotcount=2 \
+    ro.telephony.iwlan_operation_mode=legacy \
+    persist.vendor.radio.procedure_bytes=SKIP
 
-# SurfaceFlinger
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.protected_contents=true
-
+#Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.early_phase_offset_ns=1500000 \
-    debug.sf.early_app_phase_offset_ns=1500000 \
-    debug.sf.early_gl_phase_offset_ns=3000000 \
-    debug.sf.early_gl_app_phase_offset_ns=15000000
+    vendor.qcom.bluetooth.soc=pronto \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=false \
+    ro.vendor.bluetooth.wipower=false
+
+
+
+#apex
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.apex.updatable=false
+
+#HWUI properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hwui.texture_cache_size=72 \
+    ro.hwui.layer_cache_size=48 \
+    ro.hwui.r_buffer_cache_size=8 \
+    ro.hwui.path_cache_size=32 \
+    ro.hwui.gradient_cache_size=1 \
+    ro.hwui.drop_shadow_cache_size=6 \
+    ro.hwui.texture_cache_flushrate=0.4 \
+    ro.hwui.text_small_cache_width=1024 \
+    ro.hwui.text_small_cache_height=1024 \
+    ro.hwui.text_large_cache_width=2048 \
+    ro.hwui.text_large_cache_height=2048
+
+
+# Samsung Stuff
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product_ship=true \
+    config.disable_consumerir=true \
+    ro.vendor.cscsupported=1
+#    ro.cmc.device_type=pd \
+#    ro.cmc.version=2.0
