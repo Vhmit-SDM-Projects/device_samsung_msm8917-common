@@ -1205,6 +1205,10 @@
          off features. -->
     <bool name="config_avoidGfxAccel">true</bool>
     
+    <!-- If device supports corner radius on windows.
+         This should be turned off on low-end devices to improve animation performance. -->
+    <bool name="config_supportsRoundedCornersOnWindows">false</bool>
+
     <!-- Enable AOD even tho we dont have amoled display -->
     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
     
