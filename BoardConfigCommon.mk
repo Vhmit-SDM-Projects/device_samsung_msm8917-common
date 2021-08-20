@@ -154,9 +154,6 @@ TARGET_USES_HWC2 := true
 
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
-# Lights
-TARGET_PROVIDES_LIBLIGHT=true
-
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
 
