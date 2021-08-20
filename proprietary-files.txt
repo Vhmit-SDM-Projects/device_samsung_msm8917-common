@@ -1266,9 +1266,6 @@ vendor/lib/vendor.samsung.hardware.base@1.0.so
 vendor/lib/vendor.samsung.hardware.media.converter@1.0.so
 vendor/lib/vendor.samsung.hardware.miscpower@2.0.so
 vendor/lib/vendor.samsung.hardware.vibrator@2.0.so
-vendor/lib/vendor.samsung.hardware.wifi.hostapd@2.0.so
-vendor/lib/vendor.samsung.hardware.wifi.supplicant@2.0.so
-vendor/lib/vendor.samsung.hardware.wifi@2.0.so
 
 # Seccam
 vendor/lib/vendor.qti.hardware.seccam@1.0.so
