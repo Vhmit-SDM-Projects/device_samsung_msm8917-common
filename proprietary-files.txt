@@ -917,9 +917,10 @@ vendor/lib/libgnss.so
 vendor/lib/libgnsspps.so
 vendor/lib/libgps.utils.so
 
-# Gatekeeper
-vendor/lib/hw/gatekeeper.mdfpp.so
-vendor/lib/hw/gatekeeper.msm8937.so
+# Gatekeeper from A015MUBU4BUDB - RP1A.200720.012
+vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|2f96fa3bb9a1f185cc3e0918c8cc943ea20d9de0
+vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc|1b8d5f58fe0a57906acf72b862c16a2521daa97b
+vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so|56a0389e4d050b3d387f94bcdcc6b70b4111b783
 
 # Graphics
 vendor/lib/egl/eglSubDriverAndroid.so
@@ -962,7 +963,7 @@ vendor/lib/hw/keystore.mdfpp.so
 vendor/lib/hw/keystore.msm8937.so
 vendor/lib/hw/vendor.samsung.security.skeymaster@3.0-impl.so
 vendor/lib/libkeymaster2_mdfpp.so
-vendor/lib/libkeymasterdeviceutils.so
+vendor/lib/libkeymasterdeviceutils.so|48614bde0930f79a4046d4d32d439f4d99359999
 vendor/lib/libkeymasterprovision.so
 vendor/lib/libkeymasterutils.so
 vendor/lib/libkeymaster_helper.so
