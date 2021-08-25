@@ -173,8 +173,8 @@ TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power/power-mode.cpp
 BOARD_POWER_CUSTOM_BOARD_LIB := libpower_8937
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_samsung_msm8917
-TARGET_RECOVERY_DEVICE_MODULES := llibinit_samsung_msm8917
+TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_samsung_msm8917
+TARGET_RECOVERY_DEVICE_MODULES := libinit_samsung_msm8917
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
