@@ -59,8 +59,8 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-void dalvik_vm(char const device[]){
-    if (device.find(j4corelte) != std::string::npos ){
+void dalvik_vm(std::string device){
+    if (device.find("j4corelte") != std::string::npos ){
         property_override("dalvik.vm.heapgrowthlimit", "128m");
         property_override("dalvik.vm.heapmaxfree", "8m");
         property_override("dalvik.vm.heapminfree", "512k");
@@ -70,7 +70,7 @@ void dalvik_vm(char const device[]){
         property_override("ro.dalvik.vm.native.bridge","0");
         property_override("pm.dexopt.shared","quicken");
 
-    } else if (device.find(j4primelte) != std::string::npos){
+    } else if (device.find("j4primelte") != std::string::npos){
         property_override("dalvik.vm.heapstartsize", "8m");
         property_override("dalvik.vm.heapgrowthlimit", "192m");
         property_override("dalvik.vm.heapsize", "512m");
@@ -78,7 +78,7 @@ void dalvik_vm(char const device[]){
         property_override("dalvik.vm.heapminfree", "2m");
         property_override("dalvik.vm.heapmaxfree", "8m");
 
-    } else if (device.find(j6primelte) != std::string::npos){
+    } else if (device.find("j6primelte") != std::string::npos){
         property_override("dalvik.vm.heapstartsize", "8m");
         property_override("dalvik.vm.heapgrowthlimit", "288m");
         property_override("dalvik.vm.heapsize", "768m");
@@ -90,20 +90,20 @@ void dalvik_vm(char const device[]){
     LOG(ERROR) << "Dalvik vm configs for '" << device.c_str() << "' device\n";
 }
 
-void config_dha(char const device[]){
-    if (device.find(j4corelte) != std::string::npos ){
+void config_dha(std::string device){
+    if (device.find("j4corelte") != std::string::npos ){
         //TODO
-    }else if (device.find(j4primelte) != std::string::npos){
+    }else if (device.find("j4primelte") != std::string::npos){
         //TODO
-    } else if (device.find(j6primelte) != std::string::npos){
+    } else if (device.find("j6primelte") != std::string::npos){
         //TODO
     }
     LOG(ERROR) << "Dha configs for '" << device.c_str() << "' device\n";
 
 }
 
-void config_lmk(char const device[]){
-    if (device.find(j4corelte) != std::string::npos ){
+void config_lmk(std::string device){
+    if (device.find("j4corelte") != std::string::npos ){
     property_override("ro.lmk.kill_heaviest_task","false");
     property_override("ro.lmk.critical_upgrade","true");
     property_override("ro.lmk.upgrade_pressure","100");
@@ -124,20 +124,20 @@ void config_lmk(char const device[]){
     property_override("ro.cfg.custom_sw_limit","350");
     property_override("ro.cfg.upgrade_pressure","60");
     
-    }else if (device.find(j4primelte) != std::string::npos){
+    }else if (device.find("j4primelte") != std::string::npos){
         //TODO
-    } else if (device.find(j6primelte) != std::string::npos){
+    } else if (device.find("j6primelte") != std::string::npos){
         //TODO
     }
 LOG(ERROR) << "LMK configs for '" << device.c_str() << "' device\n";
 
 }
 
-void config_lmk(char const device[]){
-    if (device.find(j4corelte) != std::string::npos ){
+void config_lcd_density(std::string device){
+    if (device.find("j4corelte") != std::string::npos ){
         property_override("ro.sf.lcd_density","320");
-    }else if ((device.find(j4primelte) != std::string::npos) 
-     || (device.find(j6primelte) != std::string::npos)){
+    }else if ((device.find("j4primelte") != std::string::npos) 
+     || (device.find("j6primelte") != std::string::npos)){
         property_override("ro.sf.lcd_density","280");
     }
     LOG(ERROR) << "Density configs for '" << device.c_str() << "' device\n";
