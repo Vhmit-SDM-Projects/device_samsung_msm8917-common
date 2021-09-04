@@ -100,6 +100,8 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    vendor.qti.hardware.bluetooth_dun@1.0.vendor \
+    vendor.qti.hardware.btconfigstore@1.0.vendor \
     libbt-vendor
 
 # Camera
@@ -130,6 +132,7 @@ PRODUCT_PACKAGES += \
     
 # Configstore
 PRODUCT_PACKAGES += \
+    vendor.qti.hardware.capabilityconfigstore@1.0.vendor \
     android.hardware.configstore@1.1-service
 
 # Display
@@ -180,6 +183,9 @@ PRODUCT_COPY_FILES += \
     
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.0-impl
+
+PRODUCT_PACKAGES += \
+    libwifi-hal-ctrl
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -394,6 +400,10 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
     
+#crypto
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.cryptfshw@1.0.vendor
+
 # VNDK
 PRODUCT_PACKAGES += \
     libstdc++.vendor
