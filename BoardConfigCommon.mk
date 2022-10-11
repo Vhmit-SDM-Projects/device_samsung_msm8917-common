@@ -19,8 +19,6 @@ BOARD_VENDOR := samsung
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
-TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
-
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv8-a
@@ -168,10 +166,6 @@ TARGET_USES_INTERACTION_BOOST := true
 TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power/power-mode.cpp
 BOARD_POWER_CUSTOM_BOARD_LIB := libpower_8937
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_samsung_msm8917
-TARGET_RECOVERY_DEVICE_MODULES := libinit_samsung_msm8917
-
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 
@@ -187,6 +181,10 @@ SELINUX_IGNORE_NEVERALLOWS := true
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libsec-ril.so|libshims_ril.so \
     /system/vendor/lib/libsec-ril-dsds.so|libshims_ril.so
+
+# Properties
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
