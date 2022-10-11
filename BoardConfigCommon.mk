@@ -16,41 +16,12 @@
 COMMON_PATH := device/samsung/msm8917-common
 BOARD_VENDOR := samsung
 
-BUILD_BROKEN_DUP_RULES := true
-BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
-
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a53
-
-# Platform
-TARGET_BOARD_PLATFORM := msm8937
-
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := RG13A002KU
-TARGET_NO_BOOTLOADER := true
-
-# Security patch level
-VENDOR_SECURITY_PATCH := 2020-08-01
-
-# Kernel
-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 loop.max_part=7
-BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
-BOARD_KERNEL_IMAGE_NAME := zImage-dtb
-TARGET_KERNEL_ARCH := arm
-TARGET_KERNEL_SOURCE := kernel/samsung/j4corelte
-
-# FM
-BOARD_HAS_QCA_FM_SOC := "cherokee"
-BOARD_HAVE_QCOM_FM := true
-
-# ANT
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
@@ -83,8 +54,19 @@ USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 
+# ANT
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+
 # APEX
 TARGET_FLATTEN_APEX := true
+
+# Build
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := RG13A002KU
+TARGET_NO_BOOTLOADER := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth/include
@@ -110,19 +92,22 @@ endif
 # DT2W
 TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
 
+# Encryption
+TARGET_HW_DISK_ENCRYPTION := true
+
 # Fingerprint
 TARGET_SEC_FP_HAL_VARIANT := bauth
 
-# HIDL
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+# FM
+BOARD_HAS_QCA_FM_SOC := "cherokee"
+BOARD_HAVE_QCOM_FM := true
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 12348030976 # 25765059584 - 16384
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 12348030976
 BOARD_CACHEIMAGE_PARTITION_SIZE := 106954752
-BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
+BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -148,6 +133,34 @@ TARGET_USES_HWC2 := true
 
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+
+# Kernel
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 loop.max_part=7
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
+TARGET_KERNEL_ARCH := arm
+TARGET_KERNEL_SOURCE := kernel/samsung/j4corelte
+
+# Platform
+TARGET_BOARD_PLATFORM := msm8937
+
+# Peripheral manager
+TARGET_PER_MGR_ENABLED := true
+
+# Power
+TARGET_USES_INTERACTION_BOOST := true
+TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power/power-mode.cpp
+BOARD_POWER_CUSTOM_BOARD_LIB := libpower_8937
+
+# Properties
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
 
@@ -158,19 +171,11 @@ ENABLE_VENDOR_RIL_SERVICE := true
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := config omr efs
 
-# Peripheral manager
-TARGET_PER_MGR_ENABLED := true
-
-#Power
-TARGET_USES_INTERACTION_BOOST := true
-TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power/power-mode.cpp
-BOARD_POWER_CUSTOM_BOARD_LIB := libpower_8937
-
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 
-# Encryption
-TARGET_HW_DISK_ENCRYPTION := true
+# Security patch level
+VENDOR_SECURITY_PATCH := 2020-08-01
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
@@ -181,10 +186,6 @@ SELINUX_IGNORE_NEVERALLOWS := true
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libsec-ril.so|libshims_ril.so \
     /system/vendor/lib/libsec-ril-dsds.so|libshims_ril.so
-
-# Properties
-TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
-TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
