@@ -106,9 +106,6 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
-
-PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
     camera.device@3.3-impl \
@@ -398,4 +395,5 @@ $(call inherit-product, vendor/samsung/msm8917-common/msm8917-common-vendor.mk)
 
 # Prebuilt Packages
 PRODUCT_PACKAGES += \
-    Via
+    Via \
+    GCamGo
