@@ -158,6 +158,7 @@ ro.multisim.simslotcount=2
 ro.telephony.iwlan_operation_mode=legacy
 persist.vendor.radio.procedure_bytes=SKIP
 ro.config.bservice_enable=true
+persist.radio.multisim.config=dsds
 
 # Stagefright
 debug.stagefright.omx_default_rank.sw-audio=1
