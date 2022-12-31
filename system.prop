@@ -15,9 +15,6 @@ hw2d.force=1
 # Optimize shutdown service
 ro.build.shutdown_timeout=2
 
-# Disable vsync for cpu rendered apps
-debug.cpurend.vsync=false
-
 # SmoothUI
 persist.service.lgospd.enable=0
 persist.service.pcsync.enable=0
