@@ -82,12 +82,8 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
 # Dex
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    WITH_DEXPREOPT ?= true
-    WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= true
-  endif
-endif
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
 
 # DT2W
 TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
