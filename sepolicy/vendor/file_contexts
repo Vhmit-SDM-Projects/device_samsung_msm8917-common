@@ -143,3 +143,6 @@
 /sys/devices/virtual/lcd/panel(/.*)?                            u:object_r:sysfs_lcd_writable:s0
 /sys/devices/virtual/mdnie(/.*)?                            --  u:object_r:sysfs_mdnie_writable:s0
 /sys/devices/virtual/sec/tsp(/.*)?                              u:object_r:sysfs_tsp:s0
+
+# Smart Charging
+/sys/class/power_supply/battery/capacity                   u:object_r:sysfs_scharge:s0

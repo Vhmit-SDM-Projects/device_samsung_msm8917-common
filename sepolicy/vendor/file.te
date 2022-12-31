@@ -43,3 +43,6 @@ type sysfs_fpc, fs_type, sysfs_type;
 type sysfs_lcd_writable, fs_type, sysfs_type;
 type sysfs_mdnie_writable, fs_type, sysfs_type;
 type sysfs_tsp, fs_type, sysfs_type;
+
+# Smart Charging
+type sysfs_scharge, sysfs_type, fs_type;
