@@ -69,9 +69,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.foreground-heap-growth-multiplier=2.0 \
     pm.dexopt.downgrade_after_inactive_days=10
 
+ifneq ($(filter j4primelte j6primelte, $(TARGET_DEVICE)),)
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/config
+endif
 
 # Force Trim Half Cached apps
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -111,6 +113,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.perf_hint_window=50 \
     ro.config.avoid_gfx_accel=true
 
+ifneq ($(filter j4primelte j6primelte, $(TARGET_DEVICE)),)
 # HWUI properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.texture_cache_size=72 \
@@ -124,6 +127,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_small_cache_height=1024 \
     ro.hwui.text_large_cache_width=2048 \
     ro.hwui.text_large_cache_height=2048
+endif
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -131,9 +135,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sys.fw.bservice_limit=2 \
     ro.vendor.qti.sys.fw.bservice_age=5000
 
+ifneq ($(filter j4primelte j6primelte, $(TARGET_DEVICE)),)
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.nfc_nci=nqx.default
+endif
 
 # OMX
 PRODUCT_PROPERTY_OVERRIDES += \
