@@ -38,7 +38,7 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-	audio.bluetooth.default \
+    audio.bluetooth.default \
     audio.primary.msm8937 \
     audio.r_submix.default \
     audio.usb.default \
@@ -172,6 +172,7 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti \
     libvndfwk_detect_jni.qti.vendor
+
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
@@ -237,6 +238,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_profiles_8956.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_8956.xml \
     $(LOCAL_PATH)/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
     $(LOCAL_PATH)/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
+
 ifneq ($(filter j4primelte j6primelte, $(TARGET_DEVICE)),)
 # NFC
 PRODUCT_PACKAGES += \
@@ -255,6 +257,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_msm8917/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_msm8917/com.nxp.mifare.xml    
 endif
+
 # OMX
 PRODUCT_PACKAGES += \
     libmm-omxcore \
@@ -304,9 +307,9 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
     vendor.qti.hardware.perf@2.0 \
     vendor.qti.hardware.perf@2.0.vendor
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
-
 
 # Properties
 -include device/samsung/msm8917-common/vendor_prop.mk

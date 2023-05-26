@@ -19,8 +19,6 @@ BOARD_VENDOR := samsung
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
-TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
-
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv8-a
@@ -100,14 +98,6 @@ BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_MEDIA_EXTENSIONS := true
-
-# Dex
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    WITH_DEXPREOPT ?= true
-    WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= true
-  endif
-endif
 
 # DT2W
 TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"

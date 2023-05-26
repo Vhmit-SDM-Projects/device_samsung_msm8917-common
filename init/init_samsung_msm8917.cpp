@@ -134,15 +134,12 @@ LOG(ERROR) << "LMK configs for '" << device.c_str() << "' device\n";
 }
 
 void config_lcd_density(std::string device){
-    if (device.find("j4corelte") != std::string::npos ){
-        property_override("ro.sf.lcd_density","320");
-    }else if ((device.find("j4primelte") != std::string::npos) 
+    if ((device.find("j4primelte") != std::string::npos) 
      || (device.find("j6primelte") != std::string::npos)){
         property_override("ro.sf.lcd_density","280");
     }
     LOG(ERROR) << "Density configs for '" << device.c_str() << "' device\n";
 }
-
 
 void vendor_load_properties()
 {
