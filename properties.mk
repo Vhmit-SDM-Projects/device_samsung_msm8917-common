@@ -221,7 +221,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hdcp2.rx=tz \
     ro.multisim.simslotcount=2 \
     ro.telephony.iwlan_operation_mode=legacy \
-    persist.vendor.radio.procedure_bytes=SKIP
+    persist.vendor.radio.procedure_bytes=SKIP \
+    persist.radio.multisim.config=dsds
 
 #Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
