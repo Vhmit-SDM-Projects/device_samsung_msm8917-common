@@ -172,9 +172,6 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_samsung_msm8917
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 
-# Encryption
-TARGET_HW_DISK_ENCRYPTION := true
-
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
